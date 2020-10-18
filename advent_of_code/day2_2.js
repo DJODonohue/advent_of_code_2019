@@ -6,19 +6,18 @@ verb = int_code[2]
 let code
 
 function loop_inputs(){
-    var inputs = { noun: 0, verb: 0 }
+    var inputs = { noun: -1, verb: 0 }
     do{
-        code = int_code.slice(0);
-        code[1] = inputs.noun; //console.log("Set Noun"); console.log(`${code[1]}`)
-        code[2] = inputs.verb; //console.log("Set Verb"); console.log(`${code[2]}`)
-        //console.log(JSON.stringify(code))
-        //console.log(JSON.stringify(int_code))
-        //console.log("run()");
-        run();
+        code = int_code.slice(0); //reset array
         inputs = noun_verb_increment(inputs); //console.log("change inputs");
-        
+        code[1] = inputs.noun; //insert noun into reset array //console.log("Set Noun"); console.log(`${code[1]}`)
+        code[2] = inputs.verb; //insert verb into reset array //console.log("Set Verb"); console.log(`${code[2]}`)
+                                                                //console.log(JSON.stringify(code))
+                                                                //console.log(JSON.stringify(int_code))
+                                                                //console.log("run()");
+        run(); //executing int_code array
     } while (!check_output());
-    console.log(`noun: ${code[1]}, verb: ${code[2]}, solution: ${100 * code[1] + code[2]}`)
+    console.log(`noun: ${inputs.noun}, verb: ${inputs.verb}, solution: ${100 * inputs.noun + inputs.verb}`)
 }
 
 function check_output(){
