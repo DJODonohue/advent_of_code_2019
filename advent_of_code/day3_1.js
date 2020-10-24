@@ -32,7 +32,7 @@ function distance(wire){
 //distance(wire_2);
 
 */
-
+/* This method was also wrong and a bad idea
 function get_x_coordinates(wire) {
   let x = 0;
   let x_coordinates = [];
@@ -70,6 +70,8 @@ function get_y_coordinates(wire) {
   } return y_coordinates
 }
 
+
+*/
 x_wire_1 = get_x_coordinates(wire_1);
 y_wire_1 = get_y_coordinates(wire_1);
 x_wire_2 = get_x_coordinates(wire_2);
