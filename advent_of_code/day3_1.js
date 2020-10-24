@@ -45,6 +45,7 @@ function get_x_coordinates(wire) {
         x = x - Number(entry.substring(1));
         x_coordinates.push(x);
       } else {
+        x = Number(x)
         x_coordinates.push(x);
       }
     }
@@ -61,7 +62,10 @@ function get_y_coordinates(wire) {
       if (entry[0] == "D") {
         y = y - Number(entry.substring(1));
         y_coordinates.push(y);
-      } else {y_coordinates.push(y)}
+      } else {
+        y = Number(y)
+        y_coordinates.push(y)
+      }
     }
   } return y_coordinates
 }
@@ -77,7 +81,11 @@ console.log(y_wire_1.length)
 console.log(x_wire_2.length)
 console.log(y_wire_2.length)
 
+console.log(x_wire_1[301])
 console.log(x_wire_2[301])
+
+//Hey idiot, intersections aren't always at plotted points
+//All that shit you wrote down there is only useful if the lines intersect at a plotted point, not in the middle of a line
 
 function find_intersections(x1, y1, x2, y2) {
   let a = 0
@@ -86,16 +94,20 @@ function find_intersections(x1, y1, x2, y2) {
   do {
     if (x1[a] == x2[b]) {
       console.log("x1a = x2b")
+      console.log(a,b, x1[a], x2[b]);
       if (y1[a] == y2[b]) {
        console.log(x1[a], y1[a], x2[b], y2[b])
+       console.log(a,b, x1[a], x2[b]);
        return(x1[a], y1[a], x2[b], y2[b])
       } else {
         a++
         console.log("added to a")
+        console.log(a,b, x1[a], x2[b]);
         if (x1[a] == undefied) {
           a = 0
           b++
           console.log("added to b")
+          console.log(a,b, x1[a], x2[b]);
         }
       }
     } else {
@@ -111,7 +123,7 @@ function find_intersections(x1, y1, x2, y2) {
   } while (x2[b] != undefined)
 }
 //uncomment this to run v v
-//find_intersections(x_wire_1, y_wire_1, x_wire_2, y_wire_2);
+find_intersections(x_wire_1, y_wire_1, x_wire_2, y_wire_2);
 
 function manhattan_distance(x, y) {
   const distance = Math.floor(0 - x) + Math.floor(0 - y);
