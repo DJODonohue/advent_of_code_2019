@@ -75,6 +75,10 @@ y_wire_1 = get_y_coordinates(wire_1);
 x_wire_2 = get_x_coordinates(wire_2);
 y_wire_2 = get_y_coordinates(wire_2);
 
+function get_all_points(x,y){
+
+}
+
 
 console.log(x_wire_1.length)
 console.log(y_wire_1.length)
@@ -86,7 +90,8 @@ console.log(x_wire_2[301])
 
 //Hey idiot, intersections aren't always at plotted points
 //All that shit you wrote down there is only useful if the lines intersect at a plotted point, not in the middle of a line
-
+// you can still use this, but you're gonna have to re-write the directional fucntion to plot all points...
+/*
 function find_intersections(x1, y1, x2, y2) {
   let a = 0
   let b = 0
@@ -124,7 +129,7 @@ function find_intersections(x1, y1, x2, y2) {
 }
 //uncomment this to run v v
 find_intersections(x_wire_1, y_wire_1, x_wire_2, y_wire_2);
-
+*/
 function manhattan_distance(x, y) {
   const distance = Math.floor(0 - x) + Math.floor(0 - y);
 }
